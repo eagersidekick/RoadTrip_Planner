@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+#background-img {
+    background-image: url("assets/images/trafficjamhome.jpg");
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    align-items: center;
+    text-align: justify;
+    z-index: -1;
+}
+
+h1 {
+    text-align: left;
+    color: olive;
+    padding-top: 30px;
+    padding-left: 30px;
+    font-family: "Permanent Marker";
+    font-size: 40px;
+    text-shadow: 2px 2px white;
+    /* position: absolute; */
+}
+
+h2 {
+    text-align: center;
+    padding-top: 30px;
+    color: olive;
+    font-family: "Permanent Marker";
+    font-size: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-shadow: 2px 2px white;
+}
+
+.btn-div {
+    text-align: center;
+}
+
+.btn1 {
+    border: none;
+    background-color: olive;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: hsl(206, 17%, 28%);
+    font-size: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-top: 30px;
+}
+
+.input-styling {
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: "Permanent Marker";
+    color: olive;
+    text-shadow: 2px 2px white;
+}
+
+.outer-box {
+    width: 300px;
+    height: 600px;
+    background-color: slategray;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    top: 40px;
+    position: absolute;
+    left: 20px;
+}
+
+.inner-box1 {
+    width: 280px;
+    height: 130px;
+    background-color: #f5f5f5;
+    border: 2px solid #333;
+    top: 20px;
+    position: absolute;
+    border-radius: 12%;
+}
+.inner-box2 {
+    width: 280px;
+    height: 420px;
+    background-color: white;
+    border: 2px solid #333;
+    top: 160px;
+    position: absolute;
+    border-radius: 8%;
+}
+.space {
+    height: 20px;
+}
+.inner-box3 {
+    width: 270px;
+    height: 100px;
+    background-color: #f5f5f5;
+    border: 2px solid #333;
+    top: 30px;
+    right: 3px;
+    position: absolute;
+    border-radius: 10%;
+}
+.inner-box4 {
+    width: 270px;
+    height: 250px;
+    background-color: #f5f5f5;
+    border: 2px solid #333;
+    top: 150px;
+    right: 3px;
+    position: absolute;
+    border-radius: 10%;
+}
+#map-display {
+    width: 800px;
+    height: 600px;
+    background-color: white;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    top: -5px;
+    position: absolute;
+    left: 390px;
+}
