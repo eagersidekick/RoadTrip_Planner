@@ -2,10 +2,26 @@
 let map;
 let directionsService;
 let directionsRenderer;
+var jamBtn = document.getElementById("jamBtn");
+
+// $(".btn1").click(initMap);
+
+// $(".btn1").keyup(function(event){
+//     if(event.keyCode === 13){
+        
+//         initMap();
+//     }
+// });
+
+// function redirect() {
+//     var url = "trafficjam.html";
+//     window.location(url);
+// };
+
 function initMap() {
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
-    map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map-display"), {
         zoom: 6,
         center: { lat: 39.0997, lng: -94.5786 }
     });
@@ -27,3 +43,5 @@ function calcRoute() {
         }
     });
 }
+
+initMap()
