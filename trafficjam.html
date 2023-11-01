@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Traffic-Jam</title>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbC_Uzl7VrAEB6Mnc-h5xjmCiR9qNUREs&callback=initMap"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 </head>
 <body>
     <div class="outer-box">
@@ -20,12 +21,12 @@
         </div>
         <div class="space"></div>
         <div class="inner-box2">
-            <p>Based on the vibes</p>
-            <div class="inner-box3"></div>
-            <p>Genres</p>
-            <div class="inner-box4"></div>
+            <p>Upcoming Events in Destination</p>
+            <!-- unordered list for the events -->
+            <ul id="events-container"></ul>
         </div>
+    </div>
     <div id="map-display"></div>
     <script src="assets/js/script.js"></script>
 </body>
-</html>
+</html> 
