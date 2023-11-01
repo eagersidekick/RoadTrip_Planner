@@ -40,7 +40,7 @@ function calcRoute() {
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
-            logEvents(end);  // Fetch events for the destination city
+            logEvents(end);  // Fetches events for the destination city here
         } else {
             alert('Directions request failed due to ' + status);
         }
