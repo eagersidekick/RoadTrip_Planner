@@ -2,23 +2,8 @@ let map;
 let directionsService;
 let directionsRenderer;
 
-// commented this variable out as it isn't being used currently
-// var jamBtn = document.getElementById("jamBtn");
 
-// $(".btn1").click(initMap);
-
-// $(".btn1").keyup(function(event){
-//     if(event.keyCode === 13){
-        
-//         initMap();
-//     }
-// });
-
-// function redirect() {
-//     var url = "trafficjam.html";
-//     window.location(url);
-// };
-
+//Initiates map cented on a predefined site
 function initMap() {
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
@@ -29,6 +14,14 @@ function initMap() {
     directionsRenderer.setMap(map);
 }
 
+//Keyup event so the user can push enter to start the route
+$(".form-control").keyup(function(event){
+    if(event.keyCode === 13){
+        calcRoute();
+    }
+});
+
+//calculates and displays route from Google Routes API
 function calcRoute() {
     let start = document.getElementById("start").value;
     let end = document.getElementById("destination").value;
@@ -96,6 +89,7 @@ function displayEvents(events, destinationCity) {
         eventDiv.appendChild(saveButton);
 
         eventsResultContainer.appendChild(eventDiv);
+    
     });
 }
 
@@ -105,7 +99,7 @@ function saveEvent(event) {
     localStorage.setItem('savedEvents', JSON.stringify(savedEvents));
     displaySavedEvents();
 }
-
+ 
 function displaySavedEvents() {
     var savedEvents = JSON.parse(localStorage.getItem('savedEvents')) || [];
     var eventsContainer = document.getElementById('events-container');
@@ -116,12 +110,26 @@ function displaySavedEvents() {
         anchor.href = event.url;
         anchor.textContent = event.name;
         anchor.target = "_blank";
+        anchor.setAttribute("class", "pinnedEvent");
 
         var listItem = document.createElement('li');
         listItem.appendChild(anchor);
         eventsContainer.appendChild(listItem);
     });
 }
+
+$("#deletePinnedEvents").click(function () {
+    localStorage.clear();
+    $("#events-container > li").remove();
+});
+
+// function deleteEvents() {
+//     var eventsContainer = document.getElementById('events-container');
+//     var deleteButton = document.getElementById("deletePinnedEvents");
+//         localStorage.clear();
+//         $(".pinnedEvent").remove();
+//     };
+
 
 // Load saved events on page load
 window.onload = function() {
