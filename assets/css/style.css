@@ -54,7 +54,7 @@ h2 {
     text-align: center;
     cursor: pointer;
 }
-
+ 
 .card {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
@@ -114,7 +114,7 @@ h2 {
     height: 20px;
 }
 
-#map-display {
+/* #map-display {
     width: 800px;
     height: 300px;
     border: 2px solid #333;
@@ -125,21 +125,21 @@ h2 {
     top: -5px;
     position: absolute;
     left: 390px;
-}
+} */
 
 .form-control {
-    margin: 10px 0 10px 45px;
+    margin: 10px 0 10px 5px;
 }
 
 #getRouteBtn {
-    margin: 10px 0 0 45px;
+    margin: 5px 0 0 5px;
 }
 
 #events-list {
     text-align: center;
 }
 
-#events-list-box {
+/* #events-list-box {
     width: 800px;
     height: 300px;
     background-color: white;
@@ -151,4 +151,21 @@ h2 {
     top: 305px;
     position: absolute;
     left: 390px;
+} */
+
+#map-display {
+    height: 500px;
+
+}
+
+#map {
+    flex-basis: 0;
+}
+
+h1 {
+    color: olive;
+    padding-top: 20px;
+    font-family: "Permanent Marker";
+    font-size: 60px;
+    text-shadow: 2px 2px white;
 }

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic-Jam</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbC_Uzl7VrAEB6Mnc-h5xjmCiR9qNUREs&callback=initMap"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -14,20 +15,20 @@
 <body>
     <img id="background-img" src="assets/images/trafficjamhome.jpg">
     <h1>Traffic-Jam</h1>
-    <div class="outer-box">
+    <div class="container outer-box">
         <div id="routeCalcContainer">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Starting Location" id="start">
+                <input type="text" class="input is-small form-control" placeholder="Starting Location" id="start">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Destination Location" id="destination">
+                <input type="text" class="input is-small form-control" placeholder="Destination Location" id="destination">
             </div>
-            <button class="btn btn-primary" id="getRouteBtn" onclick="calcRoute()">Get roadtrip route!</button>
+            <button class="button is-warning is-small" id="getRouteBtn" onclick="calcRoute()">Get roadtrip route!</button>
         </div>
         <div class="space"></div>
         <div id="savedEventsContainer">
-            <h3>Saved Events</h3>
-            <button class="btn btn-primary" id="deletePinnedEvents" onclick="deleteEvents()">Clear Pinned Events🗑️</button>
+            <h2>Saved Events</h2>
+            <button class="button is-warning is-small" id="deletePinnedEvents" onclick="deleteEvents()">Clear Pinned Events🗑️</button>
             <ul id="events-container"></ul>
         </div>
     </div>
@@ -39,4 +40,4 @@
     <script src="assets/js/script.js"></script>
     
 </body>
-</html>
+</html> -->
