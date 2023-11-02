@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 </head>
 <body>
+    <img id="background-img" src="assets/images/trafficjamhome.jpg">
+    <h1>Traffic-Jam</h1>
     <div class="outer-box">
         <div class="inner-box1">
             <div class="form-group">
@@ -21,12 +23,15 @@
         </div>
         <div class="space"></div>
         <div class="inner-box2">
-            <p>     Upcoming Events in Destination</p>
-            <!-- unordered list for the events -->
+            <h3>Saved Events</h3>
             <ul id="events-container"></ul>
         </div>
     </div>
     <div id="map-display"></div>
+    <div id="events-list-box">
+        <h3>Available Events In <span id="city-name"></span></h3>
+        <div id="events-result-container"></div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
-</html> 
+</html>

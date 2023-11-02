@@ -40,7 +40,7 @@ function calcRoute() {
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
-            logEvents(end);  // Fetches events for the destination city here
+            logEvents(end);  // fetches events for the destination city
         } else {
             alert('Directions request failed due to ' + status);
         }
@@ -71,21 +71,51 @@ function logEvents(destinationCity) {
         });
 }
 
-function displayEvents(events) {
-    var eventsContainer = document.getElementById('events-container');
-    if (!eventsContainer) {
-        eventsContainer = document.createElement('ul');
-        eventsContainer.id = 'events-container';
-        document.querySelector('.inner-box2').appendChild(eventsContainer); 
-    }
-    
-    eventsContainer.innerHTML = ''; // Clears previous results
+function displayEvents(events, destinationCity) {
+    var eventsResultContainer = document.getElementById('events-result-container');
+    var cityNameEl = document.getElementById('city-name');
+    eventsResultContainer.innerHTML = '';   // clears previous results
+    cityNameEl.textContent = destinationCity;   // sets name dynamically
 
     events.forEach(function(event) {
+        var eventDiv = document.createElement('div');
+        eventDiv.className = 'event-item';
+
         var anchor = document.createElement('a');
         anchor.href = event.url;
         anchor.textContent = event.name;
-        anchor.target = "_blank"; // Opens in new tab
+        anchor.target = "_blank";   // opens in a new tab
+        eventDiv.appendChild(anchor);
+
+        // created a button to call function to save event to local storage
+        var saveButton = document.createElement('button');
+        saveButton.textContent = '💾';  // save icon 
+        saveButton.onclick = function() {
+            saveEvent(event);
+        };
+        eventDiv.appendChild(saveButton);
+
+        eventsResultContainer.appendChild(eventDiv);
+    });
+}
+
+function saveEvent(event) {
+    var savedEvents = JSON.parse(localStorage.getItem('savedEvents')) || [];
+    savedEvents.push(event);
+    localStorage.setItem('savedEvents', JSON.stringify(savedEvents));
+    displaySavedEvents();
+}
+
+function displaySavedEvents() {
+    var savedEvents = JSON.parse(localStorage.getItem('savedEvents')) || [];
+    var eventsContainer = document.getElementById('events-container');
+    eventsContainer.innerHTML = ''; // clears current list
+
+    savedEvents.forEach(function(event) {
+        var anchor = document.createElement('a');
+        anchor.href = event.url;
+        anchor.textContent = event.name;
+        anchor.target = "_blank";
 
         var listItem = document.createElement('li');
         listItem.appendChild(anchor);
@@ -93,5 +123,9 @@ function displayEvents(events) {
     });
 }
 
-initMap();
+// Load saved events on page load
+window.onload = function() {
+    displaySavedEvents();
+};
 
+initMap();
