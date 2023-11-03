@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Playpen Sans";
 }
 
 #background-img {
@@ -38,6 +39,15 @@ h2 {
 
 .btn-div {
     text-align: center;
+}
+
+.button {
+    font-family: "Playpen Sans";
+    font-weight: 400;
+}
+
+#jamBtn {
+    margin-top: 10%;
 }
 
 .btn1 {
@@ -174,4 +184,10 @@ h1 {
     opacity: 95%;
 }.event-item button {
     margin-right: 10px;
+}
+
+#events-container,
+#events-result-container {
+    font-weight: 300;
+    font-size: large;
 }

@@ -77,7 +77,8 @@ function displayEvents(events, destinationCity) {
 
         // created a button to call function to save event to local storage
         var saveButton = document.createElement('button');
-        saveButton.textContent = '💾';  // save icon 
+        saveButton.classList.add("button");
+        saveButton.textContent = 'Save! 💾';  // save icon 
         saveButton.onclick = function() {
             saveEvent(event);
         };
