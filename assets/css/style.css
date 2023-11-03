@@ -169,3 +169,6 @@ h1 {
     font-size: 60px;
     text-shadow: 2px 2px white;
 }
+.event-item button {
+    margin-right: 10px;
+}
