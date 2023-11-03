@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <img id="background-img" src="assets/images/trafficjamhome.jpg">
 
-    <div class="tile is-ancestor; opacity: 30%;">
+    <div class="tile is-ancestor">
         <div class="tile is-3 is-vertical is-parent">
           <div class="tile is-child box">
             <h1>Traffic Jam!</h1>
@@ -45,17 +44,23 @@
         </div>
         </div>
       </div>
-      <!-- Error Modal -->
-<div id="errorModal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="box">
-        <p id="errorMessage"></p>
-        <button class="button is-warning" onclick="closeErrorModal()">Close</button>
-      </div>
-    </div>
+      <!-- Error Modal Card -->
+<div class="modal" id="errorModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Error</p>
+      <button class="delete" aria-label="close" onclick="closeErrorModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <p id="errorMessage">Error message goes here...</p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-warning" onclick="closeErrorModal()">Close</button>
+    </footer>
   </div>
-  
+</div>
+
       <script src="assets/js/script.js"></script>
 </body>
 </html>
