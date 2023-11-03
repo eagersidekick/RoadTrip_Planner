@@ -35,7 +35,7 @@ function calcRoute() {
             directionsRenderer.setDirections(result);
             logEvents(end);  // fetches events for the destination city
         } else {
-            alert('Directions request failed due to ' + status);
+            showErrorModal('Directions request failed due to invalid input. Please enter valid city, state');
         }
     });
 }
@@ -53,14 +53,14 @@ function logEvents(destinationCity) {
         })
         .then(function(data) {
             if (!data || !data._embedded || !data._embedded.events) {
-                alert('No events found for this city within the next 5 days.');
+                showErrorModal('Directions request failed due to invalid data');
                 return;
             }
-            displayEvents(data._embedded.events, destinationCity); // argument for the city-name passes in this function
+            displayEvents(data._embedded.events, destinationCity); // argument for the city-name(destinationCity) passes in this function
         })
         .catch(function(error) {
             console.error('Error fetching events:', error);
-            alert('Failed to fetch events. Please try again later.');
+            showErrorModal('Directions request failed due to error fetching');
         });
 }
 
@@ -130,6 +130,15 @@ $("#deletePinnedEvents").click(function () {
 //         $(".pinnedEvent").remove();
 //     };
 
+function showErrorModal(message) {
+    document.getElementById('errorMessage').textContent = message;
+    document.getElementById('errorModal').classList.add('is-active');
+  }
+  
+  function closeErrorModal() {
+    document.getElementById('errorModal').classList.remove('is-active');
+  }
+  
 
 // Load saved events on page load
 window.onload = function() {
