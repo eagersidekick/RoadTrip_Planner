@@ -56,7 +56,7 @@ function logEvents(destinationCity) {
                 alert('No events found for this city within the next 5 days.');
                 return;
             }
-            displayEvents(data._embedded.events);
+            displayEvents(data._embedded.events, destinationCity); // argument for the city-name passes in this function
         })
         .catch(function(error) {
             console.error('Error fetching events:', error);
@@ -68,17 +68,12 @@ function displayEvents(events, destinationCity) {
     var eventsResultContainer = document.getElementById('events-result-container');
     var cityNameEl = document.getElementById('city-name');
     eventsResultContainer.innerHTML = '';   // clears previous results
-    cityNameEl.textContent = destinationCity;   // sets name dynamically
+    cityNameEl.innerHTML = '';
+    cityNameEl.textContent = "Events near " + destinationCity + ":";   // sets name dynamically
 
     events.forEach(function(event) {
         var eventDiv = document.createElement('div');
         eventDiv.className = 'event-item';
-
-        var anchor = document.createElement('a');
-        anchor.href = event.url;
-        anchor.textContent = event.name;
-        anchor.target = "_blank";   // opens in a new tab
-        eventDiv.appendChild(anchor);
 
         // created a button to call function to save event to local storage
         var saveButton = document.createElement('button');
@@ -87,6 +82,11 @@ function displayEvents(events, destinationCity) {
             saveEvent(event);
         };
         eventDiv.appendChild(saveButton);
+        var anchor = document.createElement('a');
+        anchor.href = event.url;
+        anchor.textContent = event.name;
+        anchor.target = "_blank";   // opens in a new tab
+        eventDiv.appendChild(anchor);
 
         eventsResultContainer.appendChild(eventDiv);
     
