@@ -68,7 +68,8 @@ function displayEvents(events, destinationCity) {
     var eventsResultContainer = document.getElementById('events-result-container');
     var cityNameEl = document.getElementById('city-name');
     eventsResultContainer.innerHTML = '';   // clears previous results
-    cityNameEl.textContent = destinationCity;   // sets name dynamically
+    cityNameEl.innerHTML = '';
+    cityNameEl.textContent = "Events near " + destinationCity + ":";   // sets name dynamically
 
     events.forEach(function(event) {
         var eventDiv = document.createElement('div');
