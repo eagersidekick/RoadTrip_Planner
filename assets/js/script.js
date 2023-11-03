@@ -56,7 +56,7 @@ function logEvents(destinationCity) {
                 alert('No events found for this city within the next 5 days.');
                 return;
             }
-            displayEvents(data._embedded.events);
+            displayEvents(data._embedded.events, destinationCity); // argument for the city-name passes in this function
         })
         .catch(function(error) {
             console.error('Error fetching events:', error);
