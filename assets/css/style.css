@@ -41,6 +41,11 @@ h2 {
     text-align: center;
 }
 
+.button{
+    font-family: "Playpen Sans";
+    font-weight: 400;
+}
+
 .btn1 {
     border: none;
     background-color: olive;
