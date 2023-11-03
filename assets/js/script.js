@@ -74,12 +74,6 @@ function displayEvents(events, destinationCity) {
         var eventDiv = document.createElement('div');
         eventDiv.className = 'event-item';
 
-        var anchor = document.createElement('a');
-        anchor.href = event.url;
-        anchor.textContent = event.name;
-        anchor.target = "_blank";   // opens in a new tab
-        eventDiv.appendChild(anchor);
-
         // created a button to call function to save event to local storage
         var saveButton = document.createElement('button');
         saveButton.textContent = '💾';  // save icon 
@@ -87,6 +81,11 @@ function displayEvents(events, destinationCity) {
             saveEvent(event);
         };
         eventDiv.appendChild(saveButton);
+        var anchor = document.createElement('a');
+        anchor.href = event.url;
+        anchor.textContent = event.name;
+        anchor.target = "_blank";   // opens in a new tab
+        eventDiv.appendChild(anchor);
 
         eventsResultContainer.appendChild(eventDiv);
     
