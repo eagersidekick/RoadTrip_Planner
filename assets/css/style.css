@@ -41,9 +41,13 @@ h2 {
     text-align: center;
 }
 
-.button{
+.button {
     font-family: "Playpen Sans";
     font-weight: 400;
+}
+
+#jamBtn {
+    margin-top: 10%;
 }
 
 .btn1 {
