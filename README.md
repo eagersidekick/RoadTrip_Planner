@@ -23,4 +23,4 @@ This project is licensed under the MIT license. See the license for more informa
 ![Screetshot of the Traffic Jam application.](image-1.png)
 
 ## Link to Webpage
-https://eagersidekick.github.io/RoadTrip_Planner/
+https://eagersidekick.github.io/Traffic_Jam/
